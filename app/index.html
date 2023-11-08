@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
+    <link rel="stylesheet" href="../app/variables/variables.css">
+    <link rel="stylesheet" href="../app/base-styles/base-styles.css">
+    <link rel="stylesheet" href="../app/fonts/fonts.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="body">
+    <div class="container">
+        <div class="popup">
+            <ul class="navigation">
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">Sign In</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">Sign Up</a>
+                </li>
+            </ul>
+            <div class="content">
+                <form class="register-form">
+                    <div class="form-group">
+                        <label class="form-group__label" for="email">Email*</label>
+                        <input class="form-group__input" type="email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-group__label" for="full-name">Full name*</label>
+                        <input class="form-group__input" type="text" id="full-name" name="full-name">
+                    </div>
+                    <div class="form-group register-form__form-group-pass">
+                        <label class="form-group__label" for="password">Password*</label>
+                        <input class="form-group__input" type="password" id="password" name="password">
+                    </div>
+                    <div class="form-group register-form__form-group-pass">
+                        <label class="form-group__label" for="password-confirm">Password confirm*</label>
+                        <input class="form-group__input" type="password" id="password-confirm" name="password-confirm">
+                    </div>
+                    <button type="submit" class="register-form__button">Sign Up</button>
+                </form>
+                <div class="sidebar">
+                    <p class="terms-conditions-note">or Sign Up via</p>
+                    <button class="social-button">
+                        <img src="../app/assets/facebook-icon.svg" alt="facebook-icon" class="social-button__icon">
+                        Facebook
+                    </button>
+                    <button class="social-button">
+                        <img src="../app/assets/google-icon.svg" alt="google-icon" class="social-button__icon">
+                        Google
+                    </button>
+                    <p class="terms-conditions-note">
+                        by clicking submit you agree to<br>the
+                        <span class="terms-conditions-note__underline">
+                            Terms and Conditions
+                        </span>
+                    </p>
+                    <img src="../app/assets/flover-icon.svg" alt="flower-icon" class="sidebar__icon">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

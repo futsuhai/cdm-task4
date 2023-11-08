@@ -1,0 +1,120 @@
+.body {
+    background: var(--background-main);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 760px;
+    max-height: 576px;
+    background: var(--grey-scale);
+    padding: 30px;
+    border-radius: 32px;
+}
+
+.popup {
+    background: var(--white);
+    padding: 20px 40px;
+    border-radius: 16px;
+    box-shadow: 0px 5px 24px 0px rgba(117, 120, 139, 0.10);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+.navigation {
+    display: flex;
+    gap: 40px;
+}
+
+.navigation__link {
+    font-size: 1rem;
+    color: var(--grey-normal);
+    font-weight: 600;
+    line-height: 120%;
+}
+
+.content {
+    display: flex;
+    gap: 80px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.register-form__button {
+    height: 34px;
+    border: none;
+    background: var(--violet);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 10px;
+    color: var(--grey-normal);
+    font-weight: 400;
+}
+
+.register-form__form-group-pass {
+    position: relative;
+}
+
+/* Не совсем уверен на счет этого решения */
+.register-form__form-group-pass::before {
+    content: "";
+    position: absolute;
+    top: 17px;
+    bottom: 0;
+    right: 8px;
+    margin: auto 0;
+    width: 24px;
+    height: 24px;
+    background: url("../app/assets/password-eye.svg") no-repeat;
+}
+
+.form-group__input {
+    width: 256px;
+    height: 26px;
+    padding: 3px 8px 3px 16px;
+    align-self: stretch;
+    border-radius: 8px;
+    border: 0.5px solid var(--grey-light);
+    background: var(--white);
+    color: var(--grey-normal);
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.terms-conditions-note {
+    text-align: center;
+    font-size: 0.625rem;
+    color: var(--grey-normal);
+    font-weight: 400;
+}
+
+.terms-conditions-note__underline {
+    text-decoration: underline;
+}
+
+.social-button {
+    width: 190px;
+    height: 34px;
+    border: 1px solid var(--violet);
+    color: var(--violet);
+    background: var(--white);
+}
