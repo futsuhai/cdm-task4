@@ -1,0 +1,34 @@
+.check {
+    align-self: flex-start;
+    font-size: 0.625rem;
+    color: var(--grey-normal);
+    font-weight: 400;
+}
+
+.check__input {
+    position: absolute;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.check__box {
+    position: absolute;
+    margin-top: 0.2em;
+    margin-left: -2em;
+    width: 1em;
+    height: 1em;
+    border-radius: 0.05em;
+    box-shadow: 0 0 0 0.1em var(--violet);
+}
+
+.check__input:checked+.check__box {
+    background-color: var(--violet);
+    background-image: url("../../app/assets/checkbox.svg");
+}
+
+.check__input:focus+.check__box {
+    box-shadow:
+        0 0 0 0.1em var(--violet),
+        0 0 0 0.2em var(--blue);
+}

@@ -7,10 +7,15 @@
     --violet: #5957BA;
     --blue: #007AFF;
     --blue-light: #E4F0FF;
+    --red-normal: #FF3D00;
+    --red-light: #FFEFEF;
 
     --body-container-width: 760px;
     --body-container-height: 576px;
 
-    --sidebar-button-medium-width: 190px;
-    --sidebar-button-medium-height: 34px;
+    --sidebar-button-width: 190px;
+    --sidebar-button-height: 34px;
+
+    --input-width: 256px;
+    --input-height: 26px;
 }

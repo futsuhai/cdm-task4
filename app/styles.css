@@ -27,6 +27,10 @@
     border-radius: 16px;
 }
 
+.container__message{
+    display: none;
+}
+
 .popup {
     display: flex;
     flex-direction: column;
@@ -36,20 +40,6 @@
 .popup_theme_dark {
     box-shadow: 0px 5px 24px 0px rgba(117, 120, 139, 0.10);
     background: var(--white);
-}
-
-/* navigation styles */
-
-.navigation {
-    display: flex;
-    gap: 40px;
-}
-
-.navigation__link {
-    font-size: 1rem;
-    color: var(--grey-normal);
-    font-weight: 600;
-    line-height: 120%;
 }
 
 .content {
@@ -72,92 +62,14 @@
     background: var(--violet);
 }
 
-.form-group {
+.confirm{
     display: flex;
     flex-direction: column;
-    gap: 2px;
-    font-size: 0.625rem;
-    color: var(--grey-normal);
-    font-weight: 400;
-}
-
-.form-group__input{
-    width: 256px;
-    height: 26px;
-    padding: 3px 8px 3px 16px;
-    border-radius: 8px;
-    border: 0.5px solid var(--grey-light);
-    background: var(--white);
-    color: var(--grey-normal);
-}
-
-.form-group__input:focus{
-    border: 0.5px solid var(--blue);
-    background: var(--blue-light);
-}
-
-.pass-input {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-/* Можно ли сделать этот элемент, элеметом блока form-group чтобы не дублировать стили? */
-.pass-input__input{
-    width: 256px;
-    height: 26px;
-    padding: 3px 8px 3px 16px;
-    border-radius: 8px;
-    border: 0.5px solid var(--grey-light);
-    background: var(--white);
-    color: var(--grey-normal);
-}
-
-.pass-input__input:focus{
-    border: 0.5px solid var(--blue);
-    background: var(--blue-light);
-}
-
-.pass-input__icon {
-    cursor: pointer;
-    position: absolute;
-    right: 8px;
-}
-
-.check{
-    margin-left: 2em;
     align-self: flex-start;
-    font-size: 0.625rem;
-    color: var(--grey-normal);
-    font-weight: 400;
 }
 
-.check__input{
-    position: absolute;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-.check__box{
-    position: absolute;
-    margin-top: 0.2em;
-    margin-left: -2em;
-    width: 1em;
-    height: 1em;
-    border-radius: 0.05em;
-    box-shadow: 0 0 0 0.1em var(--violet);
-}
-
-.check__input:checked + .check__box{
-    background-color: var(--violet);
-    background-image: url("../app/assets/checkbox.svg");
-}
-
-.check__input:focus + .check__box {
-    box-shadow:
-        0 0 0 0.1em var(--violet),
-        0 0 0 0.2em var(--blue);
+.confirm__check {
+    margin-left: 2em;
 }
 
 /* sidebar styles */
@@ -180,12 +92,9 @@
     text-decoration: underline;
 }
 
-.siderbar-button_size_medium {
-    width: var(--sidebar-button-medium-width);
-    height: var(--sidebar-button-medium-height);
-}
-
-.siderbar-button_theme_violet {
+.sidebar__button {
+    width: var(--sidebar-button-width);
+    height: var(--sidebar-button-height);
     border: 1px solid var(--violet);
     color: var(--violet);
     background: var(--white);

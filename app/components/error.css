@@ -1,0 +1,5 @@
+.error-alert {
+    font-size: 0.625rem;
+    color: var(--red-normal);
+    font-weight: 400;
+}

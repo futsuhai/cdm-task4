@@ -1,5 +1,6 @@
 body {
     font-family: 'Poppins';
+    outline: none;
 }
 
 p {
@@ -27,4 +28,5 @@ button {
     font-size: 0.75rem;
     font-weight: 600;
     color: var(--white);
+    outline: none;
 }

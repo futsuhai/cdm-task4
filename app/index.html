@@ -7,7 +7,11 @@
     <title>Регистрация</title>
     <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
     <link rel="stylesheet" href="../app/variables/variables.css">
-    <link rel="stylesheet" href="../app/base-styles/base-styles.css">
+    <link rel="stylesheet" href="../app/components/base-styles.css">
+    <link rel="stylesheet" href="../app/components/check.css">
+    <link rel="stylesheet" href="../app/components/inputs.css">
+    <link rel="stylesheet" href="../app/components/navigation.css">
+    <link rel="stylesheet" href="../app/components/error.css">
     <link rel="stylesheet" href="../app/fonts/fonts.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -17,54 +21,68 @@
         <div class="popup popup_theme_dark container__popup">
             <ul class="navigation">
                 <li class="navigation__item">
-                    <a href="#" class="navigation__link">Sign In</a>
+                    <button class="navigation__button">
+                        Sign In
+                    </button>
                 </li>
                 <li class="navigation__item">
-                    <a href="#" class="navigation__link">Sign Up</a>
+                    <button class="navigation__button">
+                        Sign Up
+                    </button>
                 </li>
             </ul>
             <div class="content">
-                <form class="register-form">
+                <form novalidate class="register-form">
                     <div class="form-group">
                         <label class="form-group__label" for="email">Email*</label>
-                        <input class="form-group__input" type="email" id="email">
+                        <input class="form-group__input form-group__input_valid" type="email" id="email" name="Email"
+                            required maxlength="100">
+                        <span role="alert" class="error-alert"></span>
                     </div>
                     <div class="form-group">
                         <label class="form-group__label" for="full-name">Full name*</label>
-                        <input class="form-group__input" type="text" id="full-name">
+                        <input class="form-group__input form-group__input_valid" type="text" id="full-name"
+                            name="Full name" required maxlength="150">
+                        <span role="alert" class="error-alert"></span>
                     </div>
                     <div class="form-group">
                         <label class="form-group__label" for="password">Password*</label>
                         <div class="pass-input">
-                            <input class="pass-input__input" type="password" id="password">
-                            <img src="../app/assets/password-eye.svg" alt="password-eye-icon" class="pass-input__icon">
+                            <input class="pass-input__input pass-input__input_valid" type="password" id="password"
+                                name="Password" required pattern="^(?=.*[^a-zA-Z])(?=.*[a-zA-Z]).*$" maxlength="30"
+                                minlength="8">
+                            <img src="../app/assets/password-eye.svg" alt="password-eye-icon" class="pass-input__icon"
+                                type="button">
                         </div>
+                        <span role="alert" class="error-alert"></span>
                     </div>
                     <div class="form-group">
                         <label class="form-group__label" for="password-confirm">Password confirm*</label>
                         <div class="pass-input">
-                            <input class="pass-input__input" type="password-confirm" id="password-confirm">
-                            <img src="../app/assets/password-eye.svg" alt="facebook-icon" class="pass-input__icon">
+                            <input class="pass-input__input pass-input__input_valid" type="password"
+                                id="password-confirm" name="Password confirm" required>
+                            <img src="../app/assets/password-eye.svg" alt="facebook-icon" class="pass-input__icon"
+                                type="button">
                         </div>
+                        <span role="alert" class="error-alert pass-confirm"></span>
                     </div>
-
-                    <label class="check">
-                        <input class="check__input" type="checkbox">
-                        <span class="check__box">
-
-                        </span>
-                        I confirm that I want to register
-                    </label>
-
+                    <div class="confirm">
+                        <label class="check confirm__check">
+                            <input class="check__input" type="checkbox" id="checkbox">
+                            <span class="check__box"></span>
+                            I confirm that I want to register
+                        </label>
+                        <span role="alert" class="error-alert"></span>
+                    </div>
                     <button type="submit" class="register-form__button">Sign Up</button>
                 </form>
                 <div class="sidebar">
                     <p class="terms-conditions-note">or Sign Up via</p>
-                    <button class="social-button siderbar-button_size_medium siderbar-button_theme_violet">
+                    <button class="social-button sidebar__button">
                         <img src="../app/assets/facebook-icon.svg" alt="facebook-icon" class="social-button__icon">
                         Facebook
                     </button>
-                    <button class="social-button siderbar-button_size_medium siderbar-button_theme_violet">
+                    <button class="social-button sidebar__button">
                         <img src="../app/assets/google-icon.svg" alt="google-icon" class="social-button__icon">
                         Google
                     </button>
@@ -78,6 +96,9 @@
                 </div>
             </div>
         </div>
+        <span class="container__message">
+            You have successfully created an account!
+        </span>
     </div>
     <script src="script.js"></script>
 </body>

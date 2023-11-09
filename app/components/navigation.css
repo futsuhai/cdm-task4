@@ -1,0 +1,37 @@
+.navigation {
+    display: flex;
+    gap: 40px;
+}
+
+.navigation__button {
+    background: var(--white);
+    padding: 0px 3px 8px 3px;
+    border: none;
+    font-size: 1rem;
+    color: var(--grey-normal);
+    line-height: 120%;
+    position: relative;
+}
+
+.navigation__button::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--violet);
+    transform: scaleX(0);
+}
+
+.navigation__button:active,
+.navigation__button:hover,
+.navigation__button:focus {
+    color: var(--violet);
+}
+
+.navigation__button:active::after,
+.navigation__button:hover::after,
+.navigation__button:focus::after {
+    transform: scaleX(1);
+}
