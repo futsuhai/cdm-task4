@@ -37,7 +37,7 @@
                         <label class="form-group__label" for="email">Email*</label>
                         <input class="form-group__input form-group__input_valid" type="email" id="email" name="Email"
                             required maxlength="100">
-                        <span role="alert" class="error-alert"></span>
+                        <span role="alert" class="error-alert"></span> <!-- Лучше все же создавать ошибки по мере их наличия. Например, если ошибки нет, то этот блок в принципе тут не нужен-->
                     </div>
                     <div class="form-group">
                         <label class="form-group__label" for="full-name">Full name*</label>
@@ -52,7 +52,7 @@
                                 name="Password" required pattern="^(?=.*[^a-zA-Z])(?=.*[a-zA-Z]).*$" maxlength="30"
                                 minlength="8">
                             <img src="../app/assets/password-eye.svg" alt="password-eye-icon" class="pass-input__icon"
-                                type="button">
+                                type="button"> <!-- type у картинки ?-->
                         </div>
                         <span role="alert" class="error-alert"></span>
                     </div>
@@ -62,7 +62,7 @@
                             <input class="pass-input__input pass-input__input_valid" type="password"
                                 id="password-confirm" name="Password confirm" required>
                             <img src="../app/assets/password-eye.svg" alt="facebook-icon" class="pass-input__icon"
-                                type="button">
+                                type="button"> <!-- type у картинки ?-->
                         </div>
                         <span role="alert" class="error-alert pass-confirm"></span>
                     </div>
@@ -96,6 +96,8 @@
                 </div>
             </div>
         </div>
+
+
         <span class="container__message">
             You have successfully created an account!
         </span>
