@@ -48,17 +48,18 @@ checkbox.addEventListener("change", function (event) {
 });
 
 form.addEventListener("submit", function (event) {
+    let hasErrors = false;
     fields.forEach(({ input, error }) => {
         if (!input.validity.valid) {
             showError(input, error);
-            event.preventDefault();
+            hasErrors = true;
         }
         if (input.id === "password-confirm") {
             const passwordInput = document.getElementById("password");
             if (passwordInput.value !== input.value) {
                 error.textContent = "Passwords do not match";
                 error.className = "error-alert";
-                event.preventDefault();
+                hasErrors = true;
             }
         }
     });
@@ -66,15 +67,19 @@ form.addEventListener("submit", function (event) {
     if (!checkbox.checked) {
         checkboxError.textContent = "You must confirm your registration.";
         checkboxError.className = "error-alert";
-        event.preventDefault();
+        hasErrors = true;
     }
 
-    for (const field of fields){
-        localStorage.setItem(field.input.id, field.input.value);
+    if (hasErrors) {
+        event.preventDefault();
+    } else {
+        for (const field of fields) {
+            localStorage.setItem(field.input.id, field.input.value);
+        }
+        popup.style.display = "none";
+        message.style.display = "block";
+        event.preventDefault();
     }
-    popup.style.display = "none";
-    message.style.display = "block";
-    event.preventDefault();
 });
 
 function showError(input, errorElement) {

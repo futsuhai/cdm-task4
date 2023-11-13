@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
     <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
-    <link rel="stylesheet" href="../app/variables/variables.css">
-    <link rel="stylesheet" href="../app/components/base-styles.css">
-    <link rel="stylesheet" href="../app/components/check.css">
-    <link rel="stylesheet" href="../app/components/inputs.css">
-    <link rel="stylesheet" href="../app/components/navigation.css">
-    <link rel="stylesheet" href="../app/components/error.css">
-    <link rel="stylesheet" href="../app/fonts/fonts.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="app/variables/variables.css">
+    <link rel="stylesheet" href="app/components/base-styles.css">
+    <link rel="stylesheet" href="app/components/check.css">
+    <link rel="stylesheet" href="app/components/inputs.css">
+    <link rel="stylesheet" href="app/components/navigation.css">
+    <link rel="stylesheet" href="app/components/error.css">
+    <link rel="stylesheet" href="app/fonts/fonts.css">
+    <link rel="stylesheet" href="app/styles.css">
 </head>
 
 <body class="body">
@@ -51,8 +51,7 @@
                             <input class="pass-input__input pass-input__input_valid" type="password" id="password"
                                 name="Password" required pattern="^(?=.*[^a-zA-Z])(?=.*[a-zA-Z]).*$" maxlength="30"
                                 minlength="8">
-                            <img src="../app/assets/password-eye.svg" alt="password-eye-icon" class="pass-input__icon"
-                                type="button"> <!-- type у картинки ?-->
+                            <img src="app/assets/password-eye.svg" alt="password-eye-icon" class="pass-input__icon">
                         </div>
                         <span role="alert" class="error-alert"></span>
                     </div>
@@ -61,8 +60,7 @@
                         <div class="pass-input">
                             <input class="pass-input__input pass-input__input_valid" type="password"
                                 id="password-confirm" name="Password confirm" required>
-                            <img src="../app/assets/password-eye.svg" alt="facebook-icon" class="pass-input__icon"
-                                type="button"> <!-- type у картинки ?-->
+                            <img src="app/assets/password-eye.svg" alt="facebook-icon" class="pass-input__icon">
                         </div>
                         <span role="alert" class="error-alert pass-confirm"></span>
                     </div>
@@ -79,11 +77,11 @@
                 <div class="sidebar">
                     <p class="terms-conditions-note">or Sign Up via</p>
                     <button class="social-button sidebar__button">
-                        <img src="../app/assets/facebook-icon.svg" alt="facebook-icon" class="social-button__icon">
+                        <img src="app/assets/facebook-icon.svg" alt="facebook-icon" class="social-button__icon">
                         Facebook
                     </button>
                     <button class="social-button sidebar__button">
-                        <img src="../app/assets/google-icon.svg" alt="google-icon" class="social-button__icon">
+                        <img src="app/assets/google-icon.svg" alt="google-icon" class="social-button__icon">
                         Google
                     </button>
                     <p class="terms-conditions-note">
@@ -92,7 +90,7 @@
                             Terms and Conditions
                         </span>
                     </p>
-                    <img src="../app/assets/flover-icon.svg" alt="flower-icon" class="sidebar__icon">
+                    <img src="app/assets/flover-icon.svg" alt="flower-icon" class="sidebar__icon">
                 </div>
             </div>
         </div>
@@ -102,7 +100,7 @@
             You have successfully created an account!
         </span>
     </div>
-    <script src="script.js"></script>
+    <script src="app/script.js"></script>
 </body>
 
 </html>
