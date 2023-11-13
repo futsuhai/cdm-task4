@@ -3,17 +3,16 @@ const popup = document.querySelector(".popup");
 const message = document.querySelector(".container__message");
 
 const fields = [
-    { input: document.getElementById("email"), error: document.querySelector("#email + span.error-alert") },
-    { input: document.getElementById("full-name"), error: document.querySelector("#full-name + span.error-alert") },
-    { input: document.getElementById("password"), error: document.querySelector(".pass-input + span.error-alert") },
-    { input: document.getElementById("password-confirm"), error: document.querySelector(".pass-input + span.pass-confirm") },
+    { input: document.getElementById("email"), error: createErrorElement("email") },
+    { input: document.getElementById("full-name"), error: createErrorElement("full-name") },
+    { input: document.getElementById("password"), error: createErrorElement("password") },
+    { input: document.getElementById("password-confirm"), error: createErrorElement("password-conform") },
 ];
 
 fields.forEach(({ input, error }) => {
     input.addEventListener("input", function (event) {
         if (input.validity.valid) {
             error.textContent = "";
-            error.className = "error-alert";
             input.classList.remove(this.classList[0] + '_invalid');
             input.classList.add(this.classList[0] + '_valid');
         } else {
@@ -26,7 +25,7 @@ fields.forEach(({ input, error }) => {
             const passwordInput = document.getElementById("password");
             if (passwordInput.value !== input.value) {
                 error.textContent = "Passwords do not match";
-                error.className = "error-alert";
+                setErrorAlert(input, error, ".form-group");
                 input.classList.remove(this.classList[0] + '_valid');
                 input.classList.add(this.classList[0] + '_invalid');
             }
@@ -35,16 +34,15 @@ fields.forEach(({ input, error }) => {
 });
 
 const checkbox = document.getElementById("checkbox");
-const checkboxError = document.querySelector(".check + span.error-alert");
+const checkboxError = createErrorElement("checkbox");
 
 checkbox.addEventListener("change", function (event) {
     if (checkbox.checked) {
         checkboxError.textContent = "";
-        checkboxError.className = "error-alert";
     } else {
         checkboxError.textContent = "You must confirm your registration.";
-        checkboxError.className = "error-alert";
     }
+    setErrorAlert(checkbox, checkboxError, ".confirm");
 });
 
 form.addEventListener("submit", function (event) {
@@ -52,13 +50,17 @@ form.addEventListener("submit", function (event) {
     fields.forEach(({ input, error }) => {
         if (!input.validity.valid) {
             showError(input, error);
+            input.classList.remove(input.classList[0] + '_valid');
+            input.classList.add(input.classList[0] + '_invalid');
             hasErrors = true;
         }
         if (input.id === "password-confirm") {
             const passwordInput = document.getElementById("password");
             if (passwordInput.value !== input.value) {
                 error.textContent = "Passwords do not match";
-                error.className = "error-alert";
+                setErrorAlert(input, error, ".form-group");
+                input.classList.remove(this.classList[0] + '_valid');
+                input.classList.add(this.classList[0] + '_invalid');
                 hasErrors = true;
             }
         }
@@ -66,7 +68,7 @@ form.addEventListener("submit", function (event) {
 
     if (!checkbox.checked) {
         checkboxError.textContent = "You must confirm your registration.";
-        checkboxError.className = "error-alert";
+        setErrorAlert(checkbox, checkboxError, ".confirm");
         hasErrors = true;
     }
 
@@ -94,7 +96,8 @@ function showError(input, errorElement) {
     } else if (input.validity.tooShort) {
         errorElement.textContent = `${input.name} must be more than ${input.minLength} characters`;
     }
-    errorElement.className = "error-alert";
+    var formGroup = input.closest(".form-group");
+    formGroup.appendChild(errorElement);
 }
 
 const passwordIcon = document.querySelectorAll(".pass-input__icon");
@@ -110,3 +113,15 @@ passwordIcon.forEach(function (icon) {
         }
     });
 });
+
+function createErrorElement(id) {
+    const errorElement = document.createElement("span");
+    errorElement.className = "error-alert";
+    errorElement.id = id + "-error";
+    return errorElement;
+}
+
+function setErrorAlert(element, errorElement, parentClass) {
+    var parent = element.closest(parentClass);
+    parent.appendChild(errorElement);
+}
